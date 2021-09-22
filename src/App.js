@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { NavBar } from "./Components/NavBar";
+import Movies from "./Components/Movies";
+import { useState } from "react";
+import Add from "./Components/Add";
+import Rating from "./Components/Rating";
 
 function App() {
+  const [data, setData] = useState(Movies);
+  const handelAdd = (newMovie) => {
+    setData([...data, newMovie]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Movies />
+      <Add add={handelAdd} />
+      {/* <Rating /> */}
     </div>
   );
 }
