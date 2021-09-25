@@ -1,10 +1,7 @@
 .App {
   text-align: center;
   background-color: #E50914;
-
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -12,7 +9,7 @@
   }
 }
 .d-flex{
-  width: 300px;
+  width: 700px;
 }
 .navBar{
   align-items: center;
@@ -35,7 +32,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 .image{
   width:200px;

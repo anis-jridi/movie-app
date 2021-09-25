@@ -1,11 +1,12 @@
 import React from "react";
+import Rating from "./Rating";
+
 import { Form, FormControl, Nav, Navbar, Button } from "react-bootstrap";
 
-export const NavBar = () => {
+export const NavBar = ({ text, handelChange, rating, handelRating }) => {
   return (
     <div className="navBar">
       <Navbar expand="lg">
-        <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="mr-auto my-2 my-lg-0"
@@ -27,12 +28,15 @@ export const NavBar = () => {
           </Nav>
           <Form className="d-flex">
             <FormControl
+              value={text}
+              onChange={handelChange}
               type="search"
               placeholder="Search"
               className="mr-2"
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
+            <Rating rating={rating} handelRating={handelRating} />
           </Form>
         </Navbar.Collapse>
       </Navbar>

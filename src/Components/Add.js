@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import Rating from "./Rating";
 
 const Add = ({ add }) => {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [image, setImage] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState();
+  let handelRating = (x) => setRating(x);
+
   const handelSubmit = (e) => {
     e.preventDefault();
-    let newone = {
-      // id: 1 + Math.random(),
-      name,
-      rating,
-      date,
-      image,
-    };
-    add(newone);
+
+    add(name, rating, date, image);
     setName("");
     setRating("");
     setDate("");
@@ -34,6 +31,7 @@ const Add = ({ add }) => {
           backgroundColor: "black",
           color: "#52070a",
           fontSize: "30px",
+          marginBottom: "100px",
         }}
         variant="primary"
         onClick={handleShow}
@@ -63,22 +61,18 @@ const Add = ({ add }) => {
           />
           <p> Date</p>
           <input
-            type="text"
+            type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
           <p> Image</p>
           <input
-            type="text"
+            type="url"
             value={image}
             onChange={(e) => setImage(e.target.value)}
           />
           <p> Rating</p>
-          <input
-            type="text"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          />
+          <Rating rating={rating} handelRating={handelRating} />
         </Modal.Body>
         <Modal.Footer>
           <Button
@@ -103,7 +97,7 @@ const Add = ({ add }) => {
               fontWeight: "bold",
             }}
             variant="primary"
-            onClick={handleClose}
+            onClick={handelSubmit}
           >
             Save
           </Button>
