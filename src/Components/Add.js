@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import Rating from "./Rating";
+import ReactStars from "react-rating-stars-component";
 
 const Add = ({ add }) => {
   const [name, setName] = useState("");
@@ -72,7 +72,14 @@ const Add = ({ add }) => {
             onChange={(e) => setImage(e.target.value)}
           />
           <p> Rating</p>
-          <Rating rating={rating} handelRating={handelRating} />
+          <ReactStars
+            count={5}
+            size={24}
+            isHalf={true}
+            onChange={handelRating}
+            value={rating}
+            activeColor="#ffd700"
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button

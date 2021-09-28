@@ -1,7 +1,9 @@
 import { Movie } from "@mui/icons-material";
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Rating from "./Rating";
+import ReactStars from "react-rating-stars-component";
 
 const Movies = ({ list }) => {
   return (
@@ -17,7 +19,13 @@ const Movies = ({ list }) => {
           }}
         >
           <Card.Title>
-            <Rating rating={el.rating} />
+            <ReactStars
+              count={5}
+              size={24}
+              onChange={null}
+              edit={false}
+              value={el.rating}
+            />
           </Card.Title>
           <Card.Body>
             <img className="image" src={el.image} alt="" />
@@ -27,6 +35,9 @@ const Movies = ({ list }) => {
             <Card.Text style={{ color: "white", fontSize: "20px" }}>
               {el.date}{" "}
             </Card.Text>
+            <Link to={`/Description/${el.id}`}>
+              <Button>Description</Button>
+            </Link>
           </Card.Body>
         </Card>
       ))}
