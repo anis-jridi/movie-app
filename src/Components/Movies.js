@@ -33,9 +33,9 @@ const Movies = ({ list }) => {
               {el.name}
             </Card.Text>
             <Card.Text style={{ color: "white", fontSize: "20px" }}>
-              {el.date}{" "}
+              {el.date}
             </Card.Text>
-            <Link to={`/Description/${el.id}`}>
+            <Link to={`/description/${el.id}`}>
               <Button>Description</Button>
             </Link>
           </Card.Body>

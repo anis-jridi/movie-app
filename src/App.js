@@ -6,6 +6,7 @@ import { useState } from "react";
 import Add from "./Components/Add";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Description from "./Components/Movies";
+import star from "react-rating-stars-component/dist/star";
 
 function App() {
   const [movie, setMovie] = useState([
@@ -18,17 +19,7 @@ function App() {
       date: "2021",
       image:
         "https://scontent.ftun1-2.fna.fbcdn.net/v/t1.6435-9/p180x540/87038889_636017140500251_3154953250449391616_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=730e14&_nc_ohc=uz7uWlI1BUUAX_Dl7ec&_nc_ht=scontent.ftun1-2.fna&oh=4efe516359e556045befc774c1fc855d&oe=6170C30E",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/1Q8fG0TtVAY"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/1Q8fG0TtVAY",
     },
     {
       id: 2,
@@ -39,17 +30,7 @@ function App() {
       date: "2020",
       image:
         "https://scontent.ftun1-2.fna.fbcdn.net/v/t1.6435-9/p180x540/86802362_636016897166942_1608333817762807808_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_ohc=D80JkwMWVN4AX-l0QR7&_nc_ht=scontent.ftun1-2.fna&oh=67601fe57875c967ae83bb3c8b84cf7f&oe=616DCE8C",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/g4U4BQW9OEk"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/g4U4BQW9OEk",
     },
     {
       id: 3,
@@ -60,17 +41,7 @@ function App() {
       date: "2020",
       image:
         "https://scontent.ftun1-2.fna.fbcdn.net/v/t1.6435-9/87061584_636013653833933_9165488560743120896_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_ohc=gEbFYieZoiIAX_fSxa5&_nc_ht=scontent.ftun1-2.fna&oh=13874b23bb57c91de2d3c4ea55b2a0c6&oe=61705713",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/qetRmJWkm1Q"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/qetRmJWkm1Q",
     },
     {
       id: 4,
@@ -81,17 +52,7 @@ function App() {
       date: "2019",
       image:
         "https://scontent.ftun1-2.fna.fbcdn.net/v/t1.6435-9/80449213_587069935394972_4265380752356540416_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_ohc=buiOK3B_H5QAX-VZ7U7&_nc_ht=scontent.ftun1-2.fna&oh=3adab86069d994e452885dbf22c4ca7e&oe=6170E6FF",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/2QKg5SZ_35I"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/2QKg5SZ_35I",
     },
     {
       id: 5,
@@ -102,17 +63,7 @@ function App() {
       date: "2020",
       image:
         "https://www.themoviedb.org/t/p/w220_and_h330_face/7BCTdek5LFHglcgl7shsm7igJAH.jpg",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/K8pyNXNtZBM"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/K8pyNXNtZBM",
     },
     {
       id: 6,
@@ -123,17 +74,7 @@ function App() {
       date: "2018",
       image:
         "https://wehco.media.clients.ellingtoncms.com/img/photos/2021/06/10/homemovies_0611_rgb_t800.jpg?90232451fbcadccc64a17de7521d859a8f88077d",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/odM92ap8_c0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/odM92ap8_c0",
     },
     {
       id: 7,
@@ -144,23 +85,12 @@ function App() {
       date: "2017",
       image:
         "https://play-lh.googleusercontent.com/e2RT4NLIcganjzLMphYegrylKmMf1H-sA-d4kVv7I1ZKo24YrobowJTiLpNFA5LlaetWZFBLkVxuQej2ebtU",
-      trailer: (
-        <iframe
-          width="853"
-          height="480"
-          src="https://www.youtube.com/embed/fEE4RO-_jug"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      ),
+      trailer: "https://www.youtube.com/embed/fEE4RO-_jug",
     },
   ]);
-  const handelAdd = (x, a, y, z, t) => {
+  const handelAdd = (x, y, z, t) => {
     let newAction = {
       name: x,
-      description: a,
       rating: y,
       id: Math.random(),
       date: z,
@@ -178,26 +108,32 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar
-        text={text}
-        handelChange={handelChange}
-        handelRating={handelRating}
-      />
       <Router>
+        <NavBar
+          text={text}
+          handelChange={handelChange}
+          handelRating={handelRating}
+          rat={stars}
+        />
+
         <Switch>
-          <Movies
-            movie={movie}
-            list={movie.filter(
-              (el) =>
-                el.name.toLowerCase().includes(text.toLowerCase()) &&
-                el.rating >= stars
-            )}
-          />
           <Route
             exact
-            path="/Description/:id"
-            render={(props) => <Description {...props} movie={movie} />}
+            path="/"
+            render={() => (
+              <Movies
+                movie={movie}
+                list={movie.filter(
+                  (el) =>
+                    el.name.toLowerCase().includes(text.toLowerCase()) &&
+                    el.rating >= stars
+                )}
+              />
+            )}
           />
+          <Route exact path="/description/:id">
+            <Description list={movie} />
+          </Route>
         </Switch>
       </Router>
       <Add add={handelAdd} />

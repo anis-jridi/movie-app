@@ -3,7 +3,7 @@ import ReactStars from "react-rating-stars-component";
 
 import { Form, FormControl, Nav, Navbar, Button } from "react-bootstrap";
 
-export const NavBar = ({ text, handelChange, ratingChanged }) => {
+export const NavBar = ({ text, handelChange, handelRating }) => {
   return (
     <div className="navBar">
       <Navbar expand="lg">
@@ -36,13 +36,14 @@ export const NavBar = ({ text, handelChange, ratingChanged }) => {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <ReactStars
-              count={5}
-              onChange={ratingChanged}
-              size={24}
-              isHalf={true}
-              activeColor="#ffd700"
-            />{" "}
+            <span>
+              <ReactStars
+                count={5}
+                onChange={handelRating}
+                size={24}
+                activeColor="#ffd700"
+              />
+            </span>
           </Form>
         </Navbar.Collapse>
       </Navbar>
